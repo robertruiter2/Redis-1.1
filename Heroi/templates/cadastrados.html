@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrados</title>
+</head>
+<body>
+    {% for item in lis_redis %}
+    <table id="table-cards">
+        <tr>
+            <td style="width: 20%;">Nome:</td>
+            <td style="width: 60%;">{{ item.nome }}</td>
+        </tr>
+        <tr>
+            <td style="width: 20%;">Universo:</td>
+            <td style="width: 60%;">{{ item.universo }}</td>
+        </tr>
+        <tr>
+            <td style="width: 20%;">Habilidade:</td>
+            <td style="width: 60%;">{{ item.habilidade }}</td>
+        </tr>
+    </table>
+    {% endfor %}
+    {% for item in lista %}
+    <table id="table-cards">
+        <tr>
+            <td style="width: 20%;">Nome:</td>
+            <td style="width: 60%;">{{ item.nome }}</td>
+        </tr>
+        <tr>
+            <td style="width: 20%;">Universo:</td>
+            <td style="width: 60%;">{{ item.universo }}</td>
+        </tr>
+        <tr>
+            <td style="width: 20%;">Habilidade:</td>
+            <td style="width: 60%;">{{ item.habilidade }}</td>
+        </tr>
+    </table>
+    {% endfor %}
+</body>
+</html>

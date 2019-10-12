@@ -1,0 +1,144 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}.geral{
+    height: 100%;
+    background-color: lightgray;
+}#nav{
+	background-color: #8A0829;			
+	box-shadow: 1px 2px 0px 1px red;
+}#nav2{
+	width: 25%;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 1px 2px 0px 1px red;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px; 
+	background-color: #8A0829;
+}#container-pai{
+	margin-top: 2%;
+	margin-left: 2.5%;
+	width: 30%;
+	height: 60vh;
+	float: left;
+}#container-filho{
+	height: 54vh;
+	background-color: #8A0829;
+	box-shadow: 1px 2px 0px 1px red;
+}#container-filho_2{
+	height: 54vh;
+	background-color: #8A0829;
+	box-shadow: 1px 2px 0px 1px red;
+	overflow: auto;
+}#container-filho_3{
+    padding-top: 6%;
+    height: 54vh;
+    background-color: #8A0829;
+    box-shadow: 1px 2px 0px 1px red;
+    overflow: auto;
+}#cards{
+	margin-top: 1%;
+	width: 90%;
+	height: 29.5%;
+	border: 1px solid black;
+	background-color: white;	
+}#cards_2{
+    margin-top: 1%;
+    width: 90%;
+    height: 31.5%;
+    border: 1px solid black;
+    background-color: white;    
+}.h2{    		
+	font-family: "Permanent Marker";
+}#h2_1{
+	margin-left: 10%;
+}#h2_2{
+	margin-left: 45%; 
+}#h4{
+    font-family: "Permanent Marker";
+}.h3{
+	margin-left: auto;
+	margin-right: auto;
+	font-family: "Permanent Marker";
+}.label{
+	font-family: "Permanent Marker";
+}input::-webkit-input-placeholder {
+	color: #00ADEE;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	font-weight: normal;
+	font-size: 12px;
+}#btn-form{
+	margin-left: 3%;
+}.form-control{
+	width: 200%;
+}.footer{
+    width: 100%;
+    height: 7%;
+    float: left;
+	bottom: 0;
+	background-color: #8A0829;
+	box-shadow: 0px -4px 0px  red;
+}#copy-div{
+	margin-top: 0.5%;
+	margin-left: auto;
+	margin-right: auto;
+	width: 26%;
+}#copy{
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: "Permanent Marker";
+}
+
+/* Pesquisar */
+.searchbar{
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 35px;
+    border-radius: 30px;
+    padding: 0px;
+}.search_input{
+    color: black;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    margin-top: -5px;
+    font-size: 20px;
+    caret-color:transparent;
+    line-height: 42px;
+    transition: width 0.2s linear;
+}.searchbar:hover > .search_input{
+    padding: 0 20px;
+    width: 170px;
+    caret-color:red;
+    transition: width 0.1s linear;
+}.searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+}.search_icon{
+    height: 35px;
+    width: 35px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+}#img-search-icon{
+	margin-top: -5px;
+}#a{
+	width: 50%;
+	float: right;
+	margin-right: -15px;
+}#table-cards{
+    width: 93%;
+	float: left;
+	color: black;
+    margin-top: 7%;
+	font-family: "Permanent Marker";
+}#img-excluir{
+    margin-top: 15%;
+    float: right;
+}
