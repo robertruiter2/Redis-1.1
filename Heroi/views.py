@@ -10,15 +10,17 @@ def home(request):
     form = HeroiForm(request.POST)
     if form.is_valid():
         form.save()
-        conexão.set('nome:' + str(form.cleaned_data['nome']), form.cleaned_data['nome'])
-        conexão.set('universo:' + str(form.cleaned_data['nome']), form.cleaned_data['universo'])
-        conexão.set('habilidade:' + str(form.cleaned_data['nome']), form.cleaned_data['habilidade'])
-        #conexão.rpush(str(form.cleaned_data['nome']), form.cleaned_data['nome'], form.cleaned_data['universo'], form.cleaned_data['habilidade']))
         lista = Heroi.objects.all()
-        #lista_redis = conexão.lrange(str(form.cleaned_data['nome']), 0, -1)
-        lista_redis = conexão.keys()
+        conexão.hset(str(form.cleaned_data['nome']), 'nome', form.cleaned_data['nome'])
+        conexão.hset(str(form.cleaned_data['nome']), 'universo', form.cleaned_data['universo'])
+        conexão.hset(str(form.cleaned_data['nome']), 'habilidade', form.cleaned_data['habilidade'])
+        match_redis = conexão.keys()
+        lista_redis = []
+        for i in match_redis:
+            lista_redis.append(i)
+        print(lista_redis)
         form = HeroiForm()
-        return render(request, 'cadastro.html', {'form': form, 'lista':lista, 'lista_redis':lista_redis})
+        return render(request, 'cadastro.html', {'form': form, 'lista':lista, 'redis':lista_redis})
     else:
         form = HeroiForm()
         return render(request, 'cadastro.html', {'form':form})

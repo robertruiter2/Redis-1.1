@@ -15,26 +15,37 @@
     <div class="container rounded" id="cards"  onmouseover="show_excluir(this)" onmouseout="hide_excluir(this)" >
         <table id="table-cards">
             <tr>
-                <td style="width: 20%;">Nome:</td>
+                <td style="width: 20%;">Nome: BD</td>
                 <td style="width: 60%;">{{ heroi.nome }}</td>
             </tr>
             <tr>
-                <td style="width: 20%;">Universo:</td>
+                <td style="width: 20%;">Universo: BD</td>
                 <td style="width: 60%;">{{ heroi.universo }}</td>
             </tr>
             <tr>
-                <td style="width: 20%;">Habilidade:</td>
+                <td style="width: 20%;">Habilidade: BD</td>
                 <td style="width: 60%;">{{ heroi.habilidade }}</td>
             </tr>
         </table>
     </div>
     {% endfor %}
+    {% for i in lista_redis %}
     <div class="container rounded" id="cards"  onmouseover="show_excluir(this)" onmouseout="hide_excluir(this)" >
         <table id="table-cards">
             <tr>
-                {{ lista_redis }}
+                <td style="width: 20%;">Nome: Redis</td>
+                <td style="width: 60%;">{{ i }}</td>
+            </tr>
+            <tr>
+                <td style="width: 20%;">Universo: Redis</td>
+                <td style="width: 60%;">{{ i }}</td>
+            </tr>
+            <tr>
+                <td style="width: 20%;">Habilidade: Redis</td>
+                <td style="width: 60%;">{{ i }}</td>
             </tr>
         </table>
     </div>
+    {% endfor %}
 </body>
 </html>
