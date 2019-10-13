@@ -29,20 +29,11 @@
         </table>
     </div>
     {% endfor %}
-    {% for i in lista_redis %}
+    {% for key, value in redis.items %}
     <div class="container rounded" id="cards"  onmouseover="show_excluir(this)" onmouseout="hide_excluir(this)" >
         <table id="table-cards">
             <tr>
-                <td style="width: 20%;">Nome: Redis</td>
-                <td style="width: 60%;">{{ i }}</td>
-            </tr>
-            <tr>
-                <td style="width: 20%;">Universo: Redis</td>
-                <td style="width: 60%;">{{ i }}</td>
-            </tr>
-            <tr>
-                <td style="width: 20%;">Habilidade: Redis</td>
-                <td style="width: 60%;">{{ i }}</td>
+                <td style="width: 20%;">{{key}} - {{ value }}</td>
             </tr>
         </table>
     </div>
