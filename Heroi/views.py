@@ -7,16 +7,17 @@ import redis
 
 def home(request):
     conexão = redis.Redis()
-    form = HeroiForm(request.POST)
+    form = HeroiForm(request.POST or None)
+    lista = Heroi.objects.all()
     if form.is_valid():
         form.save()
-        lista = Heroi.objects.all()
         dic = {'nome':form.cleaned_data['nome'], 'universo':form.cleaned_data['universo'],
                'habilidade':form.cleaned_data['habilidade']}
         conexão.hmset(str(form.cleaned_data['nome']), dic)
-        redis_lista = conexão.hgetall(str(form.cleaned_data['nome']))
+        redis_lista = conexão.hgetall(str(form.cleaned_data['nome'])).items()
         form = HeroiForm()
-        return render(request, 'cadastro.html', {'form': form, 'lista':lista, 'redis':redis_lista})
+        return render(request, 'index.html', {'form':form, 'lista':lista, 'redis':redis_lista})
     else:
         form = HeroiForm()
-        return render(request, 'cadastro.html', {'form':form})
+        redis_lista = conexão.keys()
+        return render(request, 'index.html', {'form':form, 'lista':lista, 'redis':redis_lista})
